@@ -10,7 +10,7 @@ from views.movies import movie_ns
 
 def create_app(config_object):
     application = Flask(__name__)
-    app.config.from_object(config_object)
+    application.config.from_object(config_object)
     register_extensions(application)
     return application
 

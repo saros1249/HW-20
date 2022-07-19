@@ -20,7 +20,7 @@ def director_dao():
 
     director_dao.get_one = MagicMock(return_value=d1)
     director_dao.get_all = MagicMock(return_value=[d1, d2])
-    director_dao.create = MagicMock(d3)
+    director_dao.create = MagicMock(return_value=d3)
     director_dao.update = MagicMock()
     director_dao.delete = MagicMock()
 
@@ -37,7 +37,7 @@ def genre_dao():
 
     genre_dao.get_one = MagicMock(return_value=genre_1)
     genre_dao.get_all = MagicMock(return_value=[genre_1, genre_2])
-    genre_dao.create = MagicMock(genre_3)
+    genre_dao.create = MagicMock(return_value=genre_3)
     genre_dao.update = MagicMock()
     genre_dao.delete = MagicMock()
 
@@ -54,7 +54,7 @@ def movie_dao():
 
     movie_dao.get_one = MagicMock(return_value=movie_1)
     movie_dao.get_all = MagicMock(return_value=[movie_1, movie_2])
-    movie_dao.create = MagicMock(movie_3)
+    movie_dao.create = MagicMock(return_value=movie_3)
     movie_dao.update = MagicMock()
     movie_dao.delete = MagicMock()
 
