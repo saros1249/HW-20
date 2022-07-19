@@ -9,23 +9,23 @@ from views.movies import movie_ns
 
 
 def create_app(config_object):
-    app = Flask(__name__)
+    application = Flask(__name__)
     app.config.from_object(config_object)
-    register_extensions(app)
-    return app
+    register_extensions(application)
+    return application
 
 
-def register_extensions(app):
-    db.init_app(app)
-    api = Api(app)
+def register_extensions(application):
+    db.init_app(application)
+    api = Api(application)
     api.add_namespace(movie_ns)
     api.add_namespace(director_ns)
     api.add_namespace(genre_ns)
-    create_data(app, db)
+    create_data(application, db)
 
 
-def create_data(app, db):
-    with app.app_context():
+def create_data(application, db):
+    with application.app_context():
         db.create_all()
 
 
