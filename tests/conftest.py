@@ -2,12 +2,12 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from demostration_solution.dao.director import DirectorDAO
-from demostration_solution.dao.genre import GenreDAO
-from demostration_solution.dao.model.director import Director
-from demostration_solution.dao.model.genre import Genre
-from demostration_solution.dao.model.movie import Movie
-from demostration_solution.dao.movie import MovieDAO
+from dao.director import DirectorDAO
+from dao.genre import GenreDAO
+from dao.model.director import Director
+from dao.model.genre import Genre
+from dao.model.movie import Movie
+from dao.movie import MovieDAO
 
 
 @pytest.fixture()
@@ -48,9 +48,9 @@ def genre_dao():
 def movie_dao():
     movie_dao = MovieDAO(None)
 
-    movie_1 = Movie(id=1, name='Comedy')
-    movie_2 = Movie(id=2, name='Drama')
-    movie_3 = Movie(id=21, name='Chost')
+    movie_1 = Movie(id=1, title='Йеллоустоун', description='TEXT', year=2010)
+    movie_2 = Movie(id=2, title='Test', description='TEXT', year=2011)
+    movie_3 = Movie(id=21, title='TEST', description='TEXT', year=2000)
 
     movie_dao.get_one = MagicMock(return_value=movie_1)
     movie_dao.get_all = MagicMock(return_value=[movie_1, movie_2])

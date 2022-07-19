@@ -1,6 +1,6 @@
 import pytest
 
-from demostration_solution.service.director import DirectorService
+from service.director import DirectorService
 
 
 class TestDirectorService:
@@ -29,4 +29,4 @@ class TestDirectorService:
 
     def test_delete(self):
         res = self.director_service.delete(21)
-        assert res
+        assert res is None

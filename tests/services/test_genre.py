@@ -1,6 +1,6 @@
 import pytest
 
-from demostration_solution.service.genre import GenreService
+from service.genre import GenreService
 
 
 class TestGenreService:
